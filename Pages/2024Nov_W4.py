@@ -1,7 +1,7 @@
 import streamlit as st
 import pandas as pd
 import numpy as np
-import gspread
+# import gspread
 from streamlit_gsheets import GSheetsConnection
 import matplotlib.pyplot as plt
 
