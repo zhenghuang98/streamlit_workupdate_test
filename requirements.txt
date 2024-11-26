@@ -1,0 +1,8 @@
+streamlit
+pandas
+numpy
+matplotlib
+datetime
+plotly
+time
+gspread
