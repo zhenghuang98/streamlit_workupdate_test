@@ -6,22 +6,16 @@ import matplotlib.pyplot as plt
 import plotly.express as px
 import time
 
-st.write('Test Page')
-st.write('Work hour count')
-# 显示当前时间，每秒更新
-
 st.title("工作时间记录工具")
-st.write("### 当前时间")
-# current_time_placeholder = st.empty()
-#def update_current_time():
-#    while True:
-#        current_time_placeholder.write(datetime.now().strftime("%Y-%m-%d %H:%M:%S"))
-#        time.sleep(1)
+@st.fragment(run_every=1)
+def show_current_time():
+    current_time = datetime.now().strftime("%H:%M:%S")
+    st.write(f"#### Current time: {current_time}")
 
-# 持久化数据存储
-DATA_FILE = "../work_time_records.csv"
+show_current_time()
 
-
+# 数据存储
+DATA_FILE = "work_time_records.csv"
 
 # 初始化数据
 def load_data():
@@ -35,6 +29,16 @@ def save_data(data):
 
 # 加载记录数据
 work_data = load_data()
+
+#col1, col2 = st.columns(2)
+#with col1:
+#    if st.button("Start"):
+#       start_timer()
+
+#with col2:
+ #   if st.button("Stop"):
+ #       stop_timer()
+
 
 # 显示实时工作时长（每分钟刷新）
 if "start_time" in st.session_state:
@@ -66,7 +70,7 @@ if st.button("结束"):
 if "start_time" in st.session_state:
     start_time = st.session_state["start_time"]
     elapsed_time = datetime.now() - start_time
-    elapsed_time_placeholder.write(f"已经工作了：{elapsed_time.seconds // 3600}小时 {elapsed_time.seconds % 3600 // 60}分钟")
+    elapsed_time_placeholder.write(f"已经工作了：{elapsed_time.seconds // 3600}小时 {elapsed_time.seconds % 3600 // 60}分钟 {elapsed_time.seconds % 60}秒")
 
 # 工作时间记录（倒序排列）
 st.write("### 工作时间记录")
