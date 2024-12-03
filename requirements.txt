@@ -5,3 +5,5 @@ matplotlib
 datetime
 plotly
 st-gsheets-connection
+paddlepaddle
+paddleocr

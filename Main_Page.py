@@ -18,6 +18,10 @@ pages = {
         st.Page("Reports/PaperII_discuss.py", title="Paper II Discussion"),
 
     ],
+    
+    "Widgets": [
+        st.Page("Widgets/Aurora_forcast_NOAA.py", title="Aurora Forecast"),
+    ],
 }
 
 pg = st.navigation(pages)
