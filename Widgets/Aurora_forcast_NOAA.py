@@ -1,9 +1,7 @@
 import streamlit as st
 import requests
-from bs4 import BeautifulSoup
 from datetime import datetime
 import time
-import schedule
 from paddleocr import PaddleOCR,draw_ocr
 
 st.title("Aurora Forecast")
